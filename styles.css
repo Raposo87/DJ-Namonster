@@ -71,7 +71,7 @@ h1, h2, h3 {
 }
 .hero {
     height: 100vh;
-    background-image: url('https://previews-te.wetransfer.net/file/wetransfer/j1oc/s0dsu6y52cfh03hhz20240621201405/syfhsw38y6v28q7q820240621201405?width=2048&height=2048&source=spaceship&origin=collect-free&quiet=true&s=e04bf2e6c0495c1d284a8d9651e465a19c2cd110&Expires=1744139174&Signature=fbCIdjVfLv30Us1z42u9XDhUOzMXHHZ9c7cLFUBK9v9R5Q3qwDstrq2EG2bhRoC0aIBUZA87p6gB0pPNn6aKPPxo0eso9pZrsHbcUCbspX8y8lnPxg~t1GrNUwlchgl2foGLL7GZFXFd5MoeJVTT1WvvYM4nN8h~STYtQHmXAuXh2z3bMpk2Ne7pQficGgKry3FVzhWVFKYwmCkrMXHHW-YGHTxV7cPhMDSMLo93uOKRjAgzOCj9NciwQW3hGqGNEe9Olq175pNa41JLdr2YE5HL0L0Ya2rjRyPNZnLHDrKjPzTbNBcNRuPGZL5hHM2YdA9yfJI35Jbt8MbNubancw__&Key-Pair-Id=APKAIRLQFERKGUWFG7GQ');
+    background-image: url('img-fundo1.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
