@@ -157,12 +157,63 @@ h1, h2, h3 {
     margin: 0 auto;
     font-size: 1.1rem;
 }
+/* Efeito de máquina de escrever */
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid var(--neon); /* Cursor piscando */
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 1.5s steps(14, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--neon); }
+}
+.music-style h3 {
+    color: var(--neon);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    overflow: hidden; /* Garante que o efeito não cause scroll horizontal */
+}
+/* Efeito de vibração */
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+.vibrate {
+    animation: vibrate 0.5s linear 2;
+}
+
+.vibrate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.vibrate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+h2 {
+    transition: all 0.3s ease-out;
+    /* Mantenha seus estilos existentes */
+}
 
 /* Bio Section */
-.bio-section {
-    padding: 4rem 0;
-    background-color: var(--dark);
-}
 
 .bio-section h2 {
     text-align: center;
@@ -301,19 +352,23 @@ footer {
 /* Animations */
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(1.3);
     }
     50% {
         transform: scale(1.05);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.);
     }
 }
 
 
 /* Layout responsivo para as seções */
 @media (min-width: 992px) {
+    .video-container h2.vibrate-on-scroll,
+    .bio-section h2.vibrate-on-scroll {
+        text-align: left;
+    }
     .video-container {
         display: flex;
         align-items: center;

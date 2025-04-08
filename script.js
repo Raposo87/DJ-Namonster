@@ -50,3 +50,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Efeito de vibração ao aparecer no scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const vibrateElements = document.querySelectorAll('.vibrate-on-scroll');
+    
+    function checkScroll() {
+        vibrateElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150; // Quantidade de pixels visíveis para disparar
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+                
+                // Adiciona a classe de vibração por 2 segundos
+                element.classList.add('vibrate');
+                setTimeout(() => {
+                    element.classList.remove('vibrate');
+                }, 5000);
+            }
+        });
+    }
+    
+    // Verifica ao carregar e ao rolar
+    window.addEventListener('load', checkScroll);
+    window.addEventListener('scroll', checkScroll);
+    
+    // Inicializa verificando os elementos visíveis
+    checkScroll();
+});
+
+// Efeito de máquina de escrever
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuração do Intersection Observer para disparar o efeito
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const typewriter = entry.target;
+                typewriter.style.animation = 'none';
+                void typewriter.offsetWidth; // Trigger reflow
+                typewriter.style.animation = null;
+                
+                // Remove o cursor após a animação
+                setTimeout(() => {
+                    typewriter.style.borderRight = 'none';
+                }, 2500);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Aplica o observer a todos os elementos com a classe
+    document.querySelectorAll('.typewriter-text').forEach(el => {
+        observer.observe(el);
+    });
+});
