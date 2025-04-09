@@ -137,25 +137,30 @@ h1, h2, h3 {
 
 .video-wrapper {
     width: 100%;
-    max-width: 800px;
-    
-    margin: 0 auto 2rem;
+    max-width: 289px;
     border: 3px solid var(--primary);
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(142, 68, 173, 0.5);
+    margin: 0 auto;
 }
 
 .video-wrapper video {
     width: 100%;
     display: block;
 }
+.video-container {
+    display: flex;
+    flex-direction: column; /* Padrão: coluna para mobile */
+    gap: 2rem;
+    align-items: center;
+}
 
 .video-description {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 /* Efeito de máquina de escrever */
 .typewriter-text {
@@ -370,9 +375,9 @@ footer {
         text-align: left;
     }
     .video-container {
-        display: flex;
+        flex-direction: row; /* Muda para linha em telas grandes */
         align-items: center;
-        gap: 3rem;
+        justify-content: space-between;
     }
     .hero {
         background-size: cover;
@@ -381,6 +386,7 @@ footer {
     .video-container h2 {
         text-align: left;
     }
+    
     
     .video-wrapper {
         flex: 1;
@@ -463,13 +469,22 @@ footer {
     }
     
     .video-container {
-        flex-direction: column;
+        flex-direction: row; /* Muda para linha em telas médias e grandes */
+        justify-content: space-between;
+        align-items: center;
     }
-    
+    .video-wrapper {
+        flex: 0 0 45%; /* Não cresce, não encolhe, ocupa 45% */
+        margin: 0; /* Remove margem automática */
+    }
     .video-description {
+        flex: 0 0 36%; /* Não cresce, não encolhe, ocupa 45% */
+        text-align: left;
+        margin: 0; /* Remove margem automática */
+    }
+    .video-section h2 {
+        width: 100%;
         text-align: center;
-        margin-top: -1rem;
-        font-size: 22px;
     }
 
 }
