@@ -124,7 +124,8 @@ h1, h2, h3 {
 
 /* Video Section */
 .video-section {
-    background-color: var(--darker);
+    
+    background-color: black;
     padding: 4rem 0;
 }
 
@@ -219,7 +220,11 @@ h2 {
 }
 
 /* Bio Section */
-
+.bio-section{
+    background-image: url('https://images.pexels.com/photos/32997/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800');
+    background-size: cover;
+    background-position: center;
+}
 .bio-section h2 {
     text-align: center;
     margin-bottom: 2rem;
