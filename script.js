@@ -103,3 +103,27 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+
+
+// Slider de imagens de fundo no header
+document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.hero');
+    const backgrounds = [
+        'img-fundo1.jpeg',
+        'img-fundo.jpeg',
+        ''
+         // Adicione mais imagens se desejar
+    ];
+    let currentBg = 0;
+    
+    function changeBackground() {
+        hero.style.backgroundImage = `url(${backgrounds[currentBg]})`;
+        currentBg = (currentBg + 1) % backgrounds.length;
+    }
+    
+    // Mudar a cada 5 segundos
+    setInterval(changeBackground, 5000);
+    
+    // Iniciar com a primeira imagem
+    changeBackground();
+});
