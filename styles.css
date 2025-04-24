@@ -125,9 +125,10 @@ h1, h2, h3 {
 
 /* Video Section */
 .video-section {
-    
-    background-color: black;
-    padding: 4rem 0;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    overflow: visible;
 }
 
 .video-section h2 {
@@ -156,6 +157,8 @@ h1, h2, h3 {
     flex-direction: column; /* Padrão: coluna para mobile */
     gap: 2rem;
     align-items: center;
+    position: relative;
+    
 }
 
 .video-description {
@@ -163,6 +166,43 @@ h1, h2, h3 {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.5rem;
+}
+.sound-wave {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 2rem; /* Espaço acima das ondas */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+}
+.bar {
+    background: linear-gradient(to top, #0a617d, #2196f3, #64b5f6);
+    margin: 0 0.5px; /* Espaçamento entre as barras */
+    height: 2px;
+    width: 2px !important; /* Sobrescrever qualquer largura definida no JS */
+    min-width: 2px;
+    transition: height 0.3s ease;
+    border-radius: 2px; /* Borda arredondada */
+    box-shadow: 0 0 5px rgba(33,150,243,0.3); /* Efeito de brilho */
+}
+
+/* Adicione estas media queries para responsividade */
+@media (max-width: 768px) {
+    .sound-wave {
+        height: 40px;
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sound-wave {
+        height: 30px;
+    }
 }
 /* Efeito de máquina de escrever */
 .typewriter-text {
@@ -388,16 +428,28 @@ footer {
     .hero {
         background-size: cover;
     }
+    .video-section {
+        position: relative;
+        padding-bottom: 80px; /* Espaço para as ondas */
+    }
     
     .video-container h2 {
         text-align: left;
     }
-    
-    
-    .video-wrapper {
-        flex: 1;
-        min-width: 0;
+    .sound-wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-top: 0;
+        height: 80px;
     }
+
+    .video-wrapper {
+        z-index: 2; /* Mantém o vídeo acima das ondas */
+        position: relative;
+    }
+    
+   
     
     .video-description {
         text-align: left;
