@@ -347,9 +347,9 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.touches && e.touches[0]) {
         const touch = e.touches[0];
         handlePointerMove(touch.clientX, touch.clientY);
-        e.preventDefault();
+        
       }
-    }, { passive: false });
+    }, { passive: true });
     
     // Recriar barras quando a tela for redimensionada
     let resizeTimeout;
