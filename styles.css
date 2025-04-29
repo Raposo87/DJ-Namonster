@@ -663,6 +663,36 @@ footer {
         width: 3px;
         height: 15px;
     }
+    .video-container {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+
+  .video-section h2 {
+    text-align: left !important;
+    width: 100%;
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .sound-wave {
+    position: relative !important;
+    order: 2;
+    margin: 2rem 0;
+    height: 50px;
+  }
+
+  .video-wrapper {
+    order: 3;
+    max-width: 500px !important;
+    margin: 0 auto;
+  }
+
+  .video-description {
+    order: 4;
+    margin: 2rem 0 0 auto !important;
+    max-width: 45%;
+  }
     .hero-content {
         width: 50%; /* Controla a largura do conteúdo */
         max-width: 600px;
