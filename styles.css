@@ -352,6 +352,10 @@ h2 {
     max-height: 1000px; /* Ajuste conforme necessário */
     transition: max-height 0.5s ease-in;
 }
+ p{
+    margin-bottom: 15px;
+}
+
 
 .read-more-btn {
     background-color: transparent;
