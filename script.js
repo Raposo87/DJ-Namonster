@@ -105,11 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Slider de imagens de fundo no header
+/*// Slider de imagens de fundo no header
 document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero');
     const backgrounds = [
-        'img-fundo1.jpeg',
         'img-fundo.jpeg',
         ''
          // Adicione mais imagens se desejar
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Iniciar com a primeira imagem
     changeBackground();
-});
+});*/
 
 
 // ondas sonoras  //
