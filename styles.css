@@ -282,12 +282,23 @@ h2 {
     background-image: url('https://images.pexels.com/photos/32997/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=800');
     background-size: cover;
     background-position: center;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 .bio-section h2 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
     color: var(--neon);
+}
+.bio-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.bio-content {
+    flex: 1;
 }
 
 .gallery-container {
@@ -605,15 +616,7 @@ footer {
         margin: 1rem 0 0;
     }
     
-    .bio-container {
-        display: flex;
-        gap: 3rem;
-        align-items: center;
-    }
-    
-    .bio-content {
-        flex: 1;
-    }
+   
     .content-collapse {
         max-height: none; /* Mostra todo o conteúdo em telas grandes */
         overflow: visible;
