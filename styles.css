@@ -535,6 +535,11 @@ footer {
     padding-top: 1.5rem;
     font-size: 0.9rem;
 }
+.raposo img{
+    
+    width: 7rem;
+    
+}
 
 /* Animations */
 @keyframes pulse {
@@ -553,6 +558,8 @@ footer {
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
 }
+
+
 
 
 /* Layout responsivo para as seções */
