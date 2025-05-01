@@ -228,6 +228,7 @@ h1, h2, h3 {
     border-right: 2px solid var(--neon); /* Cursor piscando */
     white-space: nowrap;
     margin: 0 auto;
+    margin-left: 21%;
     animation: 
         typing 1.5s steps(14, end),
         blink-caret 0.75s step-end infinite;
@@ -326,11 +327,10 @@ h2 {
 .bio-text {
     max-width: 800px;
     margin: 0 auto 2rem;
-    text-align: center;
 }
 
 .bio-text p {
-    margin-bottom: 1rem;
+    margin: 16px;
 }
 .music-style {
     margin-top: 2rem;
@@ -367,6 +367,7 @@ h2 {
     font-weight: bold;
     margin-top: 1rem;
     transition: all 0.3s ease;
+    margin-left: 36%;
 }
 
 .read-more-btn:hover {
@@ -537,7 +538,6 @@ footer {
     font-size: 0.9rem;
 }
 .raposo img{
-    
     width: 7rem;
     
 }
@@ -607,15 +607,16 @@ footer {
     }
     
     .bio-container {
-        
         display: flex;
         gap: 3rem;
         align-items: center;
     }
     
     .bio-content {
-        background-color: rgba(255, 255, 255, 0.159);
-        flex: 1;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: 38rem;
     }
     .content-collapse {
         max-height: none; /* Mostra todo o conteúdo em telas grandes */
