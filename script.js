@@ -50,6 +50,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+// SOM
+const audioButton = document.getElementById("audioButton");
+      const backgroundMusic = document.getElementById("backgroundMusic");
+      let isPlaying = false;
+
+      audioButton.addEventListener("click", function (e) {
+        // Create ripple effect
+        const ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+        this.appendChild(ripple);
+
+        // Get click position
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // Position ripple
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+
+        // Toggle audio
+        if (isPlaying) {
+          backgroundMusic.pause();
+          this.innerHTML = '<i class="fas fa-play"></i>';
+        } else {
+          backgroundMusic.play();
+          this.innerHTML = '<i class="fas fa-pause"></i>';
+        }
+        isPlaying = !isPlaying;
+      });
+
+
 // Efeito de vibração ao aparecer no scroll
 document.addEventListener('DOMContentLoaded', function() {
     const vibrateElements = document.querySelectorAll('.vibrate-on-scroll');
