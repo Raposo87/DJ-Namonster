@@ -1,16 +1,78 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Galeria de imagens automática
+    // Galeria de imagens automática com controles manuais
     const images = document.querySelectorAll('.gallery-slider img');
+    const prevBtn = document.querySelector('.gallery-prev');
+    const nextBtn = document.querySelector('.gallery-next');
+    const indicators = document.querySelectorAll('.indicator');
     let currentImage = 0;
+    let autoPlayInterval;
     
-    function changeImage() {
-        images[currentImage].classList.remove('active');
-        currentImage = (currentImage + 1) % images.length;
-        images[currentImage].classList.add('active');
+    function showImage(index) {
+        // Remove classe active de todas as imagens
+        images.forEach(img => img.classList.remove('active'));
+        // Remove classe active de todos os indicadores
+        indicators.forEach(ind => ind.classList.remove('active'));
+        
+        // Adiciona classe active na imagem e indicador atual
+        images[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentImage = index;
     }
     
-    // Mudar imagem a cada 5 segundos
-    setInterval(changeImage, 5000);
+    function nextImage() {
+        const nextIndex = (currentImage + 1) % images.length;
+        showImage(nextIndex);
+    }
+    
+    function prevImage() {
+        const prevIndex = (currentImage - 1 + images.length) % images.length;
+        showImage(prevIndex);
+    }
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextImage, 5000);
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Event listeners para os botões
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            stopAutoPlay();
+            prevImage();
+            startAutoPlay(); // Reinicia o autoplay após 5 segundos
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            stopAutoPlay();
+            nextImage();
+            startAutoPlay(); // Reinicia o autoplay após 5 segundos
+        });
+    }
+    
+    // Event listeners para os indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            stopAutoPlay();
+            showImage(index);
+            startAutoPlay(); // Reinicia o autoplay após 5 segundos
+        });
+    });
+    
+    // Pausa o autoplay quando o mouse está sobre a galeria
+    const galleryContainer = document.querySelector('.gallery-container');
+    if (galleryContainer) {
+        galleryContainer.addEventListener('mouseenter', stopAutoPlay);
+        galleryContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Inicia o autoplay
+    startAutoPlay();
     
     // Efeito de digitação no subtítulo
     const subtitle = document.querySelector('.hero-subtitle');
